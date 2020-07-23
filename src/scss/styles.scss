@@ -1,0 +1,8 @@
+@import "_variables";
+
+h2 {
+  font-size: $title;
+  &:hover {
+    font-size: 80px;
+  }
+}
