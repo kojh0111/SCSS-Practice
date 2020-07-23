@@ -1,14 +1,125 @@
+@import "_variables";
 @import "_mixins";
 
-h1 {
-  color: red;
-  @include responsive("iphone") {
-    color: yellow;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 500vh;
+  background-color: $bg;
+}
+
+nav {
+  @include responsive("wide") {
+    position: fixed;
+    width: 40%;
+    height: 100%;
   }
-  @include responsive("iphone-l") {
-    font-size: 60px;
+  @include responsive("narrow") {
+    width: 100%;
+    height: 15vh;
   }
-  @include responsive("tablet") {
-    color: green;
+  color: $red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 3vh;
+  h1 {
+    width: 50%;
+    font-size: 80px;
+    margin-top: 20%;
+    margin-bottom: 60px;
+  }
+  .bottom {
+    padding-bottom: 5vh;
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+    h3,
+    p {
+      @include responsive("wide") {
+        width: 70%;
+      }
+      @include responsive("narrow") {
+        width: 90%;
+      }
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+  }
+}
+
+.link {
+  width: 80%;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.5);
+      padding-bottom: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+      margin: 0 10px 15px 0;
+      &:hover {
+        color: black;
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+}
+
+main {
+  @include responsive("wide") {
+    margin-left: 40%;
+  }
+  @include responsive("narrow") {
+    margin-top: 60vh;
+  }
+  height: 500vh;
+  background-color: $red;
+  display: block;
+  justify-content: center;
+  section {
+    @include responsive("wide") {
+      height: 100vh;
+    }
+    @include responsive("narrow") {
+      height: 60vh;
+    }
+    background-image: linear-gradient(rgba(0, 0, 0, 0.08), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    article {
+      width: 80%;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        h4 {
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+      }
+      img {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+        display: flex;
+        justify-content: flex-end;
+        span {
+          margin-left: 5px;
+          opacity: 0.3;
+        }
+      }
+    }
   }
 }
