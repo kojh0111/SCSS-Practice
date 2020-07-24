@@ -113,14 +113,14 @@ p {
       grid-template-columns: 230px 64px;
       grid-template-rows: auto;
       grid-gap: 1px;
-      color: #414141;
+      color: $black;
       text-transform: uppercase;
-      background-color: #414141;
-      border: 1px solid #414141;
+      background-color: $black;
+      border: 1px solid $black;
       &:hover {
         color: white;
         div {
-          background-color: #414141;
+          background-color: $black;
         }
       }
       div {
@@ -138,6 +138,12 @@ p {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   height: 40vh;
+  .photo {
+    transition: opacity 0.2s linear;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 footer {
