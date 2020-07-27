@@ -1,10 +1,10 @@
 @mixin responsive($device) {
   @if $device == "narrow" {
-    @media screen and (min-width: 500px) and (max-width: 880px) {
+    @media screen and (max-width: 900px) {
       @content;
     }
   } @else if $device == "wide" {
-    @media screen and (min-width: 880px) {
+    @media screen and (min-width: 900px) {
       @content;
     }
   }
